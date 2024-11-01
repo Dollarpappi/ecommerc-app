@@ -17,13 +17,13 @@ class TGridLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-      clipBehavior: Clip.hardEdge,
       padding: EdgeInsets.zero,
       itemCount: itemCount,
       physics: const NeverScrollableScrollPhysics(),
       //so it wil not take the whole space and switch to only attributes selected
       shrinkWrap: true,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        childAspectRatio: 1.5,
         crossAxisCount: 2,
         mainAxisSpacing: TSizes.gridViewSpacing,
         crossAxisSpacing: TSizes.gridViewSpacing,

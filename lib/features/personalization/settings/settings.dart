@@ -4,6 +4,7 @@ import 'package:eccomm/common/widgets/texts/section_heading.dart';
 import 'package:eccomm/features/personalization/addresses/address.dart';
 import 'package:eccomm/features/personalization/profile/profile.dart';
 import 'package:eccomm/features/personalization/settings/widget/setting_menu_title.dart';
+import 'package:eccomm/features/shop/screens/cart/cart.dart';
 import 'package:eccomm/utils/constants/colors.dart';
 import 'package:eccomm/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
@@ -65,7 +66,7 @@ class SettingScreen extends StatelessWidget {
                         icon: Iconsax.shopping_cart,
                          title: "My Cart",
                           subTitle: "Add, remove products and move to checkout",
-                          onTap: (){},
+                          onTap: ()=>Get.to(()=>const CartScreen()),
                           ),
                             SettingMenuTitle(
                         icon: Iconsax.bag_tick,

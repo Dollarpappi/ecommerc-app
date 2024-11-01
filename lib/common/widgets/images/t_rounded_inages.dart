@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 
 import '../../../utils/constants/colors.dart';
@@ -16,20 +14,20 @@ class TRoundedImage extends StatelessWidget {
   final bool isNetworkImage;
   final VoidCallback? onPressed;
   final double borderRadius;
-  
+
   const TRoundedImage({
-    super.key, 
-    this.width ,
-     this.height , 
-     required this.imageUrl,
-       this.applyImageRadius = true, 
-      this.border, 
-       this.backgroundColor = TColors.light,
-       this.fit = BoxFit.contain, 
-       this.padding,
-        this.isNetworkImage = false, 
-        this.onPressed,
-         this.borderRadius = TSizes.md,
+    super.key,
+    this.width,
+    this.height,
+    required this.imageUrl,
+    this.applyImageRadius = true,
+    this.border,
+    this.backgroundColor = TColors.light,
+    this.fit = BoxFit.contain,
+    this.padding,
+    this.isNetworkImage = false,
+    this.onPressed,
+    this.borderRadius = TSizes.md,
   });
 
   @override
@@ -39,14 +37,21 @@ class TRoundedImage extends StatelessWidget {
       child: Container(
         width: width,
         height: height,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(TSizes.md),
-        border: border,
-        color: backgroundColor,
-      ),
-      child: ClipRRect(
-        borderRadius: applyImageRadius ? BorderRadius.circular(borderRadius) :BorderRadius.zero,
-        child: Image(image: isNetworkImage ? NetworkImage(imageUrl): AssetImage(imageUrl) as ImageProvider, fit: fit,)),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(TSizes.md),
+          border: border,
+          color: backgroundColor,
+        ),
+        child: ClipRRect(
+            borderRadius: applyImageRadius
+                ? BorderRadius.circular(borderRadius)
+                : BorderRadius.zero,
+            child: Image(
+              image: isNetworkImage
+                  ? NetworkImage(imageUrl)
+                  : AssetImage(imageUrl) as ImageProvider,
+              fit: fit,
+            )),
       ),
     );
   }

@@ -16,7 +16,7 @@ class ProductDetails extends StatelessWidget {
     
     return Scaffold(
       backgroundColor: Colors.white,
-      bottomNavigationBar: TBottomAddToCart(),
+      bottomNavigationBar: const TBottomAddToCart(),
       body: SingleChildScrollView(
         child: Column(
           children: [

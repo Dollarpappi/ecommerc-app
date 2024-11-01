@@ -20,7 +20,7 @@ class CartItems extends StatelessWidget {
       shrinkWrap: true,
       itemBuilder: (_,__)=> Column(
         children: [
-          TCartItem( ), 
+          const TCartItem( ), 
     
         if(showAddRemoveButton) const  SizedBox(
             height: 10,

@@ -1,5 +1,6 @@
 import 'package:eccomm/common/widgets/appbar/appbar.dart';
 import 'package:eccomm/common/widgets/images/t_rounded_inages.dart';
+import 'package:eccomm/common/widgets/products/product_cards/product_card_horizontal.dart';
 import 'package:eccomm/common/widgets/texts/section_heading.dart';
 import 'package:eccomm/utils/constants/image_strings.dart';
 import 'package:eccomm/utils/constants/sizes.dart';
@@ -11,16 +12,24 @@ class SubCategory extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: TAppBar(title: Text("Sports shirts"), showBackArrow: true,),
+      appBar: const TAppBar(
+        title: Text("Sports shirts"),
+        showBackArrow: true,
+      ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(TSizes.defaultSpace),
+          padding: const EdgeInsets.all(TSizes.defaultSpace),
           child: Column(
             children: [
               //-- Banner
-              TRoundedImage(imageUrl: TImages.productImage1, applyImageRadius: true, width: double.infinity,),
-              SizedBox(height: TSizes.spaceBtwItems,),
-
+              const TRoundedImage(
+                imageUrl: TImages.productImage1,
+                applyImageRadius: true,
+                width: double.infinity,
+              ),
+              const SizedBox(
+                height: TSizes.spaceBtwItems,
+              ),
 
               //-- sub-category
               Column(
@@ -28,9 +37,23 @@ class SubCategory extends StatelessWidget {
                   //--Heading
                   TSectionHeading(
                     title: "Sports shirts",
-                    onPressed: (){},
+                    onPressed: () {},
                   ),
-                  SizedBox(height: TSizes.spaceBtwItems /2,),
+                  const SizedBox(
+                    height: TSizes.spaceBtwItems / 2,
+                  ),
+                  SizedBox(
+                      height: 120,
+                      child: ListView.separated(
+                        shrinkWrap: true,
+                        scrollDirection: Axis.horizontal,
+                        itemCount: 4,
+                        itemBuilder: (_, index) =>
+                            const TProductCardhorizontal(),
+                        separatorBuilder: (context, index) => const SizedBox(
+                          width: TSizes.spaceBtwItems,
+                        ),
+                      )),
                 ],
               )
             ],
